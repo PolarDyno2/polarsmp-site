@@ -39,11 +39,11 @@ async function updateServerStatus() {
     state.classList.add("online");
     stateText.textContent = "Server online";
     const online = server.players?.online ?? 0;
-    playerCount.textContent = `${online} player${online === 1 ? "" : "s"} online · Whitelist required`;
+    playerCount.textContent = `${online} player${online === 1 ? "" : "s"} online`;
   } catch {
     state.classList.add("offline");
     stateText.textContent = "Server offline";
-    playerCount.textContent = "Whitelist access required";
+    playerCount.textContent = "Server is currently offline";
   }
 }
 

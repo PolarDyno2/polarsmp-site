@@ -517,14 +517,6 @@ footer .fine-print {
     min-height: 650px;
   }
 
-  .hero-logo {
-    position: relative;
-    width: min(540px, 100%);
-    top: auto;
-    right: auto;
-    margin: -12px 0 15px;
-  }
-
   .hero h1 {
     font-size: clamp(3.7rem, 16vw, 6.5rem);
   }
@@ -586,6 +578,14 @@ footer .fine-print {
   .hero {
     min-height: 600px;
     padding-bottom: 70px;
+  }
+
+  .hero-logo {
+    position: relative;
+    width: min(360px, 100%);
+    top: auto;
+    right: auto;
+    margin: -22px auto -8px;
   }
 
   .hero-actions {

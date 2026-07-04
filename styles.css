@@ -155,13 +155,42 @@ footer {
   border-bottom: 1px solid var(--line);
 }
 
-.hero-logo {
+.hero-wordmark {
   position: absolute;
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: end;
   width: min(570px, 49vw);
   top: 78px;
   right: -15px;
-  opacity: 0.92;
-  filter: drop-shadow(0 28px 45px rgba(39, 141, 209, 0.2));
+  color: var(--ice);
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: clamp(4.2rem, 8.5vw, 7.4rem);
+  font-style: italic;
+  letter-spacing: -0.075em;
+  line-height: 0.8;
+  text-shadow:
+    0 4px 0 #3d7396,
+    0 8px 0 #133b58,
+    0 0 34px rgba(82, 200, 255, 0.35);
+  transform: skewX(-4deg);
+}
+
+.hero-wordmark > span + span {
+  color: var(--cyan);
+}
+
+.hero-wordmark small {
+  grid-column: 1 / -1;
+  margin-top: 28px;
+  color: var(--muted);
+  font-family: Inter, Arial, sans-serif;
+  font-size: 0.68rem;
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  line-height: 1;
+  text-align: center;
 }
 
 .eyebrow {
@@ -517,12 +546,13 @@ footer .fine-print {
     min-height: 650px;
   }
 
-  .hero-logo {
+  .hero-wordmark {
     position: relative;
     width: min(540px, 100%);
     top: auto;
     right: auto;
     margin: -12px 0 15px;
+    font-size: clamp(3.8rem, 20vw, 7rem);
   }
 
   .hero h1 {

@@ -13,7 +13,7 @@
   <link rel="canonical" href="https://polarsmp.com/">
   <title>PolarSMP - Java and Bedrock Survival</title>
   <link rel="icon" href="assets/polarsmp-logo.png">
-  <link rel="stylesheet" href="styles.css?v=5">
+  <link rel="stylesheet" href="styles.css?v=6">
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -43,14 +43,27 @@
       <span>POLAR<strong>SMP</strong></span>
     </a>
     <nav aria-label="Main navigation">
-      <a href="#connect">Connect</a>
-      <a href="#inside">Inside the server</a>
-      <a href="#start">First steps</a>
+      <a href="#connect">Play</a>
+      <a href="#status">Status</a>
+      <a href="#gameplay">Gameplay</a>
+      <a href="#commands">Commands</a>
+      <a href="#rules">Rules</a>
       <a href="#faq">FAQ</a>
     </nav>
     <div class="header-status" data-server-state>
       <i></i>
       <span>Checking server</span>
+    </div>
+    <button class="menu-button" type="button" aria-label="Open navigation" aria-expanded="false" data-menu-button>
+      <span></span><span></span>
+    </button>
+    <div class="mobile-menu" data-mobile-menu>
+      <a href="#connect">Play</a>
+      <a href="#status">Live status</a>
+      <a href="#gameplay">Gameplay</a>
+      <a href="#commands">Commands</a>
+      <a href="#rules">Rules</a>
+      <a href="#faq">FAQ</a>
     </div>
   </header>
 
@@ -109,6 +122,68 @@
       <div><span>02</span><strong>Open access</strong></div>
       <div><span>03</span><strong>Java + Bedrock</strong></div>
       <div><span>04</span><strong>No pay-to-win handouts</strong></div>
+    </section>
+
+    <section class="section pulse-section" id="status">
+      <div class="section-title compact">
+        <p class="eyebrow">LIVE SERVER PULSE</p>
+        <h2>Before you open Minecraft.</h2>
+        <p>Fresh data from both public routes. This panel checks again every 30 seconds.</p>
+      </div>
+
+      <div class="pulse-console">
+        <div class="pulse-overview">
+          <div class="signal-orbit" aria-hidden="true">
+            <span></span>
+            <i></i>
+          </div>
+          <div>
+            <p class="console-label">POLARSMP NETWORK</p>
+            <strong class="network-state" data-network-state>Checking routes</strong>
+            <p data-live-motd>Reading the server message...</p>
+          </div>
+        </div>
+
+        <div class="live-metrics">
+          <article>
+            <span>PLAYERS</span>
+            <strong data-live-players>-- / --</strong>
+            <small>online now</small>
+          </article>
+          <article>
+            <span>VERSION</span>
+            <strong data-live-version>1.21.11</strong>
+            <small>Paper server</small>
+          </article>
+          <article>
+            <span>STATUS CHECK</span>
+            <strong data-live-latency>-- ms</strong>
+            <small>API response</small>
+          </article>
+          <article>
+            <span>UPDATED</span>
+            <strong data-live-updated>--:--</strong>
+            <small>local time</small>
+          </article>
+        </div>
+
+        <div class="route-table">
+          <div class="route-row">
+            <span class="route-edition">JAVA</span>
+            <span class="route-light" data-java-light></span>
+            <code>play.polarsmp.com</code>
+            <span data-java-route>Checking</span>
+            <button data-copy="play.polarsmp.com">COPY</button>
+          </div>
+          <div class="route-row">
+            <span class="route-edition">BEDROCK</span>
+            <span class="route-light" data-bedrock-light></span>
+            <code>play.polarsmp.com:15014</code>
+            <span data-bedrock-route>Checking</span>
+            <button data-copy="play.polarsmp.com:15014">COPY</button>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="section connect-section" id="connect">
@@ -206,6 +281,66 @@
       </div>
     </section>
 
+    <section class="section gameplay-section" id="gameplay">
+      <div class="section-title">
+        <p class="eyebrow">THE POLARSMP LOOP</p>
+        <h2>Make a living.<br>Then make a name.</h2>
+        <p>Nothing here plays the game for you. The systems give ordinary survival more directions to take.</p>
+      </div>
+
+      <div class="loop-track">
+        <article>
+          <span class="loop-index">01</span>
+          <div class="loop-icon">E</div>
+          <h3>Earn</h3>
+          <p>Pick a job and get paid for the things you already enjoy doing: mining, farming, building or exploring.</p>
+          <code>/jobs browse</code>
+        </article>
+        <article>
+          <span class="loop-index">02</span>
+          <div class="loop-icon">T</div>
+          <h3>Trade</h3>
+          <p>Use the server shop for essentials, list valuable finds in the auction house and pay players directly.</p>
+          <code>/shop &nbsp; /ah</code>
+        </article>
+        <article>
+          <span class="loop-index">03</span>
+          <div class="loop-icon">R</div>
+          <h3>Risk</h3>
+          <p>Put a little money on a coin flip, chase crate rewards or climb the vote leaderboard.</p>
+          <code>/coinflipz &nbsp; /vote</code>
+        </article>
+        <article>
+          <span class="loop-index">04</span>
+          <div class="loop-icon">B</div>
+          <h3>Build</h3>
+          <p>Move into the wild, set homes and turn an empty patch of the map into something players remember.</p>
+          <code>/rtp &nbsp; /sethome</code>
+        </article>
+      </div>
+
+      <div class="systems-grid">
+        <article>
+          <span class="system-kicker">ECONOMY</span>
+          <h3>Jobs and balances</h3>
+          <p>Progress through job levels, check your balance and move money directly between players.</p>
+          <ul><li>Jobs progression</li><li>Server market</li><li>Direct payments</li></ul>
+        </article>
+        <article>
+          <span class="system-kicker">MARKETPLACE</span>
+          <h3>Auctions, not clutter</h3>
+          <p>Buy and sell from a clean shared auction house instead of covering spawn in hundreds of signs.</p>
+          <ul><li>Timed listings</li><li>Searchable items</li><li>Player-set prices</li></ul>
+        </article>
+        <article>
+          <span class="system-kicker">EXPLORATION</span>
+          <h3>Your own patch of world</h3>
+          <p>Random teleport gets new arrivals away from spawn quickly. Homes make the journey back painless.</p>
+          <ul><li>Random teleport</li><li>Homes and TPA</li><li>Protected spawn</li></ul>
+        </article>
+      </div>
+    </section>
+
     <section class="section first-steps" id="start">
       <div class="section-title">
         <p class="eyebrow">YOUR FIRST HOUR</p>
@@ -237,17 +372,93 @@
       </ol>
     </section>
 
-    <section class="rules">
-      <div>
-        <p class="eyebrow">KEEP IT SIMPLE</p>
-        <h2>Play fair. Do not ruin somebody else's evening.</h2>
+    <section class="section commands-section" id="commands">
+      <div class="section-title">
+        <p class="eyebrow">COMMAND FIELD GUIDE</p>
+        <h2>The useful stuff,<br>without tab-completing forever.</h2>
+        <p>Search by what you want to do. Tap any command to copy it.</p>
       </div>
-      <ul>
-        <li>No hacked clients, x-ray or unfair exploits.</li>
-        <li>No griefing, stealing or bypassing protections.</li>
-        <li>No harassment, hate speech or chat spam.</li>
-        <li>Report bugs instead of abusing them.</li>
-      </ul>
+
+      <div class="command-toolbar">
+        <label>
+          <span>SEARCH COMMANDS</span>
+          <input type="search" placeholder="Try: home, money, teleport..." data-command-search>
+        </label>
+        <div class="command-filters" aria-label="Command categories">
+          <button class="active" type="button" data-command-filter="all">All</button>
+          <button type="button" data-command-filter="travel">Travel</button>
+          <button type="button" data-command-filter="economy">Economy</button>
+          <button type="button" data-command-filter="social">Social</button>
+          <button type="button" data-command-filter="help">Help</button>
+        </div>
+      </div>
+
+      <div class="command-grid" data-command-grid>
+        <button class="command-card" data-command-card data-category="travel" data-search="spawn return hub" data-copy="/spawn">
+          <code>/spawn</code><span>Return to the main spawn.</span><b>TRAVEL</b>
+        </button>
+        <button class="command-card" data-command-card data-category="travel" data-search="rtp random teleport wild explore" data-copy="/rtp">
+          <code>/rtp</code><span>Teleport to a random place in the world.</span><b>TRAVEL</b>
+        </button>
+        <button class="command-card" data-command-card data-category="travel" data-search="sethome base save location" data-copy="/sethome &lt;name&gt;">
+          <code>/sethome &lt;name&gt;</code><span>Save your current location as a home.</span><b>TRAVEL</b>
+        </button>
+        <button class="command-card" data-command-card data-category="travel" data-search="home base teleport" data-copy="/home &lt;name&gt;">
+          <code>/home &lt;name&gt;</code><span>Travel back to one of your homes.</span><b>TRAVEL</b>
+        </button>
+        <button class="command-card" data-command-card data-category="social" data-search="tpa teleport player request" data-copy="/tpa &lt;player&gt;">
+          <code>/tpa &lt;player&gt;</code><span>Ask to teleport to another player.</span><b>SOCIAL</b>
+        </button>
+        <button class="command-card" data-command-card data-category="social" data-search="tpaccept teleport request accept" data-copy="/tpaccept">
+          <code>/tpaccept</code><span>Accept a pending teleport request.</span><b>SOCIAL</b>
+        </button>
+        <button class="command-card" data-command-card data-category="economy" data-search="jobs browse work earn money" data-copy="/jobs browse">
+          <code>/jobs browse</code><span>Browse the jobs available to join.</span><b>ECONOMY</b>
+        </button>
+        <button class="command-card" data-command-card data-category="economy" data-search="jobs join work career" data-copy="/jobs join &lt;job&gt;">
+          <code>/jobs join &lt;job&gt;</code><span>Start progressing in a chosen job.</span><b>ECONOMY</b>
+        </button>
+        <button class="command-card" data-command-card data-category="economy" data-search="shop market buy sell" data-copy="/shop">
+          <code>/shop</code><span>Open the main server market.</span><b>ECONOMY</b>
+        </button>
+        <button class="command-card" data-command-card data-category="economy" data-search="auction house ah sell listing" data-copy="/ah">
+          <code>/ah</code><span>Browse player auction listings.</span><b>ECONOMY</b>
+        </button>
+        <button class="command-card" data-command-card data-category="economy" data-search="balance bal money cash" data-copy="/bal">
+          <code>/bal</code><span>Check how much money you have.</span><b>ECONOMY</b>
+        </button>
+        <button class="command-card" data-command-card data-category="economy" data-search="pay send money player" data-copy="/pay &lt;player&gt; &lt;amount&gt;">
+          <code>/pay &lt;player&gt; &lt;amount&gt;</code><span>Send money directly to a player.</span><b>ECONOMY</b>
+        </button>
+        <button class="command-card" data-command-card data-category="social" data-search="message msg private whisper" data-copy="/msg &lt;player&gt; &lt;message&gt;">
+          <code>/msg &lt;player&gt; &lt;message&gt;</code><span>Send a private message.</span><b>SOCIAL</b>
+        </button>
+        <button class="command-card" data-command-card data-category="help" data-search="vote rewards support server" data-copy="/vote">
+          <code>/vote</code><span>View vote links and available rewards.</span><b>HELP</b>
+        </button>
+        <button class="command-card" data-command-card data-category="help" data-search="rules allowed guide" data-copy="/rules">
+          <code>/rules</code><span>Open the complete in-game rules.</span><b>HELP</b>
+        </button>
+        <button class="command-card" data-command-card data-category="help" data-search="report player staff problem" data-copy="/report &lt;player&gt;">
+          <code>/report &lt;player&gt;</code><span>Privately report a player to staff.</span><b>HELP</b>
+        </button>
+      </div>
+      <p class="empty-commands" data-command-empty>No commands match that search.</p>
+    </section>
+
+    <section class="rules" id="rules">
+      <div class="rules-intro">
+        <p class="eyebrow">THE SOCIAL CONTRACT</p>
+        <h2>Play hard.<br>Leave the nonsense elsewhere.</h2>
+        <p>Most rules boil down to one idea: your fun cannot come from wrecking somebody else's.</p>
+        <button class="button button-quiet" data-copy="/rules">COPY /RULES</button>
+      </div>
+      <ol class="rules-list">
+        <li><span>01</span><div><strong>Play legitimately</strong><p>No hacked clients, x-ray, dupes or unfair exploits.</p></div></li>
+        <li><span>02</span><div><strong>Respect builds</strong><p>No griefing, stealing or bypassing protections.</p></div></li>
+        <li><span>03</span><div><strong>Keep chat human</strong><p>No harassment, hate speech, threats or relentless spam.</p></div></li>
+        <li><span>04</span><div><strong>Report, do not retaliate</strong><p>Use <code>/report</code> and let staff handle rule breaking.</p></div></li>
+      </ol>
     </section>
 
     <section class="section faq-section" id="faq">
@@ -280,6 +491,14 @@
           <summary>Can console players join?</summary>
           <p>Yes, but some consoles need a third-party method to add external Bedrock servers.</p>
         </details>
+        <details>
+          <summary>How do I get away from spawn?</summary>
+          <p>Use <code>/rtp</code> for a random location, then save your base with <code>/sethome</code>.</p>
+        </details>
+        <details>
+          <summary>How do I earn money?</summary>
+          <p>Start with <code>/jobs browse</code>, join a job, sell in <code>/shop</code> or list items through <code>/ah</code>.</p>
+        </details>
       </div>
     </section>
 
@@ -297,11 +516,20 @@
       <span class="wordmark-icon">P</span>
       <span>POLAR<strong>SMP</strong></span>
     </a>
-    <p>Player-run survival for Java and Bedrock.</p>
+    <div class="footer-links">
+      <a href="#connect">Connect</a>
+      <a href="#commands">Commands</a>
+      <a href="#rules">Rules</a>
+      <a href="#status">Status</a>
+    </div>
     <p class="fine-print">Not affiliated with Mojang Studios or Microsoft.</p>
   </footer>
 
+  <div class="mobile-join">
+    <div><span>JAVA + BEDROCK</span><strong>play.polarsmp.com</strong></div>
+    <button data-copy="play.polarsmp.com">COPY IP</button>
+  </div>
   <div class="toast" role="status" aria-live="polite">Copied</div>
-  <script src="script.js?v=5"></script>
+  <script src="script.js?v=6"></script>
 </body>
 </html>

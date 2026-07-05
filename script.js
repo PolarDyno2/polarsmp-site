@@ -1,50 +1,98 @@
 const toast = document.querySelector(".toast");
+const overallState = document.querySelector("[data-server-state]");
+const playerCount = document.querySelector("[data-player-count]");
+const javaState = document.querySelector("[data-java-state]");
+const bedrockState = document.querySelector("[data-bedrock-state]");
 let toastTimer;
+
+function showToast(message) {
+  if (!toast) return;
+  toast.textContent = message;
+  toast.classList.add("visible");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove("visible"), 1800);
+}
 
 document.querySelectorAll("[data-copy]").forEach((button) => {
   button.addEventListener("click", async () => {
     const value = button.dataset.copy;
+
     try {
       await navigator.clipboard.writeText(value);
     } catch {
       const field = document.createElement("textarea");
       field.value = value;
+      field.setAttribute("readonly", "");
+      field.style.position = "fixed";
+      field.style.opacity = "0";
       document.body.appendChild(field);
       field.select();
       document.execCommand("copy");
       field.remove();
     }
 
-    toast.textContent = `Copied ${value}`;
-    toast.classList.add("visible");
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => toast.classList.remove("visible"), 1800);
+    showToast(`Copied ${value}`);
   });
 });
 
+function setEditionState(element, server) {
+  if (!element) return;
+
+  const detail = element.querySelector("b");
+  const online = Boolean(server?.online);
+  element.classList.toggle("online", online);
+  element.classList.toggle("offline", !online);
+
+  if (!online) {
+    detail.textContent = "Offline";
+    return;
+  }
+
+  const players = server.players?.online ?? 0;
+  detail.textContent = `${players} online`;
+}
+
+async function fetchStatus(url) {
+  const response = await fetch(url, { cache: "no-store" });
+  if (!response.ok) throw new Error(`Status request failed: ${response.status}`);
+  return response.json();
+}
+
 async function updateServerStatus() {
-  const state = document.querySelector("[data-server-state]");
-  const stateText = state.querySelector("span");
-  const playerCount = document.querySelector("[data-player-count]");
+  const [javaResult, bedrockResult] = await Promise.allSettled([
+    fetchStatus("https://api.mcstatus.io/v2/status/java/play.polarsmp.com"),
+    fetchStatus("https://api.mcstatus.io/v2/status/bedrock/play.polarsmp.com:15014")
+  ]);
 
-  try {
-    const response = await fetch(
-      "https://api.mcstatus.io/v2/status/bedrock/play.polarsmp.com:15014",
-      { cache: "no-store" }
-    );
-    const server = await response.json();
+  const java = javaResult.status === "fulfilled" ? javaResult.value : null;
+  const bedrock = bedrockResult.status === "fulfilled" ? bedrockResult.value : null;
 
-    if (!server.online) throw new Error("offline");
+  setEditionState(javaState, java);
+  setEditionState(bedrockState, bedrock);
 
-    state.classList.add("online");
-    stateText.textContent = "Server online";
-    const online = server.players?.online ?? 0;
-    playerCount.textContent = `${online} player${online === 1 ? "" : "s"} online`;
-  } catch {
-    state.classList.add("offline");
-    stateText.textContent = "Server offline";
-    playerCount.textContent = "Server is currently offline";
+  const online = Boolean(java?.online || bedrock?.online);
+  overallState?.classList.toggle("online", online);
+  overallState?.classList.toggle("offline", !online);
+
+  const overallText = overallState?.querySelector("span");
+  if (overallText) overallText.textContent = online ? "Server online" : "Server offline";
+
+  const players = java?.online
+    ? java.players?.online ?? 0
+    : bedrock?.online
+      ? bedrock.players?.online ?? 0
+      : null;
+
+  if (playerCount) {
+    playerCount.textContent = players === null
+      ? "Server offline"
+      : `${players} player${players === 1 ? "" : "s"} online`;
   }
 }
 
 updateServerStatus();
+setInterval(updateServerStatus, 30000);
+
+document.addEventListener("visibilitychange", () => {
+  if (!document.hidden) updateServerStatus();
+});

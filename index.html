@@ -3,27 +3,52 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="PolarSMP is an open Java and Bedrock survival server with jobs, trading, auctions, crates and a proper player economy.">
-  <meta name="theme-color" content="#071018">
-  <title>PolarSMP — Java & Bedrock Survival</title>
+  <meta name="description" content="PolarSMP is an open Java and Bedrock survival server with jobs, player shops, auctions, crates and one shared economy.">
+  <meta name="theme-color" content="#07121c">
+  <meta property="og:title" content="PolarSMP - Java and Bedrock Survival">
+  <meta property="og:description" content="One shared survival world. Open access, no whitelist.">
+  <meta property="og:image" content="https://polarsmp.com/assets/polarsmp-logo.png">
+  <meta property="og:url" content="https://polarsmp.com/">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://polarsmp.com/">
+  <title>PolarSMP - Java and Bedrock Survival</title>
   <link rel="icon" href="assets/polarsmp-logo.png">
-  <link rel="stylesheet" href="styles.css?v=3">
+  <link rel="stylesheet" href="styles.css?v=5">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoGame",
+      "name": "PolarSMP",
+      "url": "https://polarsmp.com/",
+      "gamePlatform": ["Minecraft Java Edition", "Minecraft Bedrock Edition"],
+      "description": "An open Java and Bedrock survival server with a shared economy and world."
+    }
+  </script>
 </head>
 <body>
-  <div class="sky" aria-hidden="true">
-    <span class="aurora aurora-one"></span>
-    <span class="aurora aurora-two"></span>
-    <span class="stars"></span>
+  <div class="ambient" aria-hidden="true">
+    <span class="glow glow-a"></span>
+    <span class="glow glow-b"></span>
+    <span class="grid-lines"></span>
+  </div>
+
+  <div class="top-strip">
+    <span class="pulse"></span>
+    Open access. No application. No whitelist.
   </div>
 
   <header class="site-header">
-    <a class="wordmark" href="#top" aria-label="PolarSMP home">POLAR<span>SMP</span></a>
+    <a class="wordmark" href="#top" aria-label="PolarSMP home">
+      <span class="wordmark-icon">P</span>
+      <span>POLAR<strong>SMP</strong></span>
+    </a>
     <nav aria-label="Main navigation">
       <a href="#connect">Connect</a>
-      <a href="#server">The server</a>
+      <a href="#inside">Inside the server</a>
+      <a href="#start">First steps</a>
       <a href="#faq">FAQ</a>
     </nav>
-    <div class="server-state" data-server-state>
+    <div class="header-status" data-server-state>
       <i></i>
       <span>Checking server</span>
     </div>
@@ -31,69 +56,100 @@
 
   <main id="top">
     <section class="hero">
-      <p class="eyebrow">OPEN SMP · JAVA + BEDROCK · SURVIVAL</p>
-      <img class="hero-logo" src="assets/polarsmp-logo.png" alt="PolarSMP">
-      <h1>Survival without<br>the filler.</h1>
-      <p class="hero-copy">
-        Start with nothing, pick up a job and build somewhere worth remembering.
-        Java and Bedrock play together in one economy and one shared world.
-      </p>
-      <div class="hero-actions">
-        <a class="primary-button" href="#connect">Join the server</a>
-        <button class="text-button" data-copy="play.polarsmp.com">Copy play.polarsmp.com</button>
+      <div class="hero-copy">
+        <p class="eyebrow">JAVA + BEDROCK / SURVIVAL / OPEN SMP</p>
+        <h1>A world worth<br><em>staying for.</em></h1>
+        <p class="hero-intro">
+          Settle somewhere far from spawn, build up a job, trade with players
+          and leave a mark on one shared survival world.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#connect">Join PolarSMP</a>
+          <button class="button button-quiet" data-copy="play.polarsmp.com">
+            Copy Java address
+          </button>
+        </div>
+        <div class="hero-facts">
+          <span><b data-player-count>Checking players</b> right now</span>
+          <span>Paper 1.21.11</span>
+          <span>Player-run economy</span>
+        </div>
       </div>
-      <div class="hero-meta">
-        <span class="player-count" data-player-count>Checking player count</span>
-        <span>Open access</span>
-        <span>Cross-play</span>
-      </div>
+
+      <aside class="hero-panel">
+        <div class="logo-orbit">
+          <span class="orbit orbit-one"></span>
+          <span class="orbit orbit-two"></span>
+          <img src="assets/polarsmp-logo.png" alt="PolarSMP server logo">
+        </div>
+        <div class="live-card">
+          <div>
+            <span class="label">SERVER ADDRESS</span>
+            <strong>play.polarsmp.com</strong>
+          </div>
+          <button data-copy="play.polarsmp.com" aria-label="Copy server address">COPY</button>
+        </div>
+        <div class="edition-status">
+          <div data-java-state>
+            <i></i>
+            <span>Java</span>
+            <b>Checking</b>
+          </div>
+          <div data-bedrock-state>
+            <i></i>
+            <span>Bedrock</span>
+            <b>Checking</b>
+          </div>
+        </div>
+      </aside>
     </section>
 
-    <section class="connect-section" id="connect">
-      <div class="section-heading">
+    <section class="trust-row" aria-label="Server highlights">
+      <div><span>01</span><strong>One shared world</strong></div>
+      <div><span>02</span><strong>Open access</strong></div>
+      <div><span>03</span><strong>Java + Bedrock</strong></div>
+      <div><span>04</span><strong>No pay-to-win handouts</strong></div>
+    </section>
+
+    <section class="section connect-section" id="connect">
+      <div class="section-title">
         <p class="eyebrow">CONNECT</p>
-        <h2>Pick your edition. Jump in.</h2>
-        <p>No application and no whitelist. Use the same address on both editions; Bedrock also needs its port.</p>
+        <h2>Same name.<br>Two editions.</h2>
+        <p>Java only needs the address. Bedrock uses the same address with port 15014.</p>
       </div>
 
-      <div class="open-callout">
-        <i></i>
-        <strong>The gates are open.</strong>
-        <span>Add the server and connect whenever it is online.</span>
-      </div>
-
-      <div class="connection-grid">
-        <article class="connection-card java-card">
-          <div class="edition-label">
-            <span>J</span>
+      <div class="connect-grid">
+        <article class="connect-card java">
+          <div class="card-top">
+            <span class="edition-mark">J</span>
             <div>
-              <strong>Java Edition</strong>
-              <small>PC · macOS · Linux</small>
+              <p>JAVA EDITION</p>
+              <h3>PC, macOS and Linux</h3>
             </div>
           </div>
-          <dl class="bedrock-address">
+          <dl>
             <div>
               <dt>Address</dt>
               <dd>play.polarsmp.com</dd>
             </div>
             <div>
               <dt>Port</dt>
-              <dd>25565</dd>
+              <dd>Default</dd>
             </div>
           </dl>
-          <button class="copy-button wide" data-copy="play.polarsmp.com">Copy address</button>
-          <p>25565 is the default Java port, so you only need to enter the address.</p>
+          <button class="copy-wide" data-copy="play.polarsmp.com">COPY JAVA ADDRESS</button>
+          <small>Add the server and paste the address. Do not enter a custom port.</small>
         </article>
 
-        <article class="connection-card bedrock-card">
-          <div class="edition-label">
-            <span>B</span>
+        <article class="connect-card bedrock">
+          <div class="card-top">
+            <span class="edition-mark">B</span>
             <div>
-              <strong>Bedrock Edition</strong>
-              <small>Windows · Mobile · Console*</small>
+              <p>BEDROCK EDITION</p>
+              <h3>Windows, mobile and console*</h3>
             </div>
           </div>
-          <dl class="bedrock-address">
+          <dl>
             <div>
               <dt>Address</dt>
               <dd>play.polarsmp.com</dd>
@@ -103,94 +159,149 @@
               <dd>15014</dd>
             </div>
           </dl>
-          <button class="copy-button wide" data-copy="play.polarsmp.com:15014">Copy address & port</button>
+          <button class="copy-wide" data-copy="play.polarsmp.com:15014">COPY ADDRESS + PORT</button>
+          <small>* Consoles may need an external-server workaround.</small>
         </article>
-      </div>
-      <p class="console-note">* Consoles may require a third-party method to add external Bedrock servers.</p>
-    </section>
-
-    <section class="server-section" id="server">
-      <div class="section-heading">
-        <p class="eyebrow">THE SERVER</p>
-        <h2>There is always something worth doing.</h2>
-      </div>
-
-      <div class="feature-list">
-        <article>
-          <span class="feature-number">01</span>
-          <h3>A real economy</h3>
-          <p>Pick up jobs, earn money, trade through player auctions and build your way up without admin handouts.</p>
-        </article>
-        <article>
-          <span class="feature-number">02</span>
-          <h3>Room to disappear</h3>
-          <p>Random teleport gets you away from spawn quickly. Find a patch of world, settle in and make it yours.</p>
-        </article>
-        <article>
-          <span class="feature-number">03</span>
-          <h3>Crates, voting & extras</h3>
-          <p>Vote rewards, crates, coin flips and a few quality-of-life systems keep the usual survival loop moving.</p>
-        </article>
-        <article>
-          <span class="feature-number">04</span>
-          <h3>Cross-play that works</h3>
-          <p>Geyser and Floodgate put Java and Bedrock players in the same world, with the same shops and progression.</p>
-        </article>
-      </div>
-
-      <div class="server-details">
-        <div>
-          <span>MODE</span>
-          <strong>Survival</strong>
-        </div>
-        <div>
-          <span>DIFFICULTY</span>
-          <strong>Easy</strong>
-        </div>
-        <div>
-          <span>ACCESS</span>
-          <strong>Open</strong>
-        </div>
-        <div>
-          <span>SERVER</span>
-          <strong>Paper 1.21.11</strong>
-        </div>
       </div>
     </section>
 
-    <section class="faq-section" id="faq">
-      <div class="section-heading">
-        <p class="eyebrow">QUICK ANSWERS</p>
-        <h2>Before you join.</h2>
+    <section class="section server-section" id="inside">
+      <div class="section-title compact">
+        <p class="eyebrow">INSIDE THE SERVER</p>
+        <h2>Survival, with reasons to log back in.</h2>
       </div>
-      <div class="faq-list">
+
+      <div class="bento">
+        <article class="bento-large">
+          <span class="bento-number">01</span>
+          <h3>Build your own economy</h3>
+          <p>
+            Choose jobs, earn money while you play, sell through the auction house
+            and trade with people instead of a faceless admin shop.
+          </p>
+          <div class="tag-row">
+            <span>Jobs</span><span>Auctions</span><span>Player trading</span>
+          </div>
+        </article>
+        <article>
+          <span class="bento-number">02</span>
+          <h3>Get away from spawn</h3>
+          <p>Random teleport gives you room to claim a corner of the world and make it yours.</p>
+        </article>
+        <article>
+          <span class="bento-number">03</span>
+          <h3>One community</h3>
+          <p>Java and Bedrock players use the same world, shops, progress and chat.</p>
+        </article>
+        <article>
+          <span class="bento-number">04</span>
+          <h3>Useful extras</h3>
+          <p>Crates, vote rewards, coin flips, NPCs and quality-of-life commands without replacing survival.</p>
+        </article>
+        <article class="bento-accent">
+          <span class="bento-number">05</span>
+          <h3>Open from day one</h3>
+          <p>No application queue and no whitelist. If the server is online, you can join.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section first-steps" id="start">
+      <div class="section-title">
+        <p class="eyebrow">YOUR FIRST HOUR</p>
+        <h2>Join. Move out.<br>Start building.</h2>
+        <p>There is no long tutorial to survive. These three steps are enough.</p>
+      </div>
+      <ol class="steps">
+        <li>
+          <span>01</span>
+          <div>
+            <h3>Connect</h3>
+            <p>Use the address above for your edition and arrive at spawn.</p>
+          </div>
+        </li>
+        <li>
+          <span>02</span>
+          <div>
+            <h3>Pick a direction</h3>
+            <p>Use random teleport, find good ground and put down your first chest.</p>
+          </div>
+        </li>
+        <li>
+          <span>03</span>
+          <div>
+            <h3>Choose a job</h3>
+            <p>Earn while you mine, build, farm or explore. Spend it with other players.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="rules">
+      <div>
+        <p class="eyebrow">KEEP IT SIMPLE</p>
+        <h2>Play fair. Do not ruin somebody else's evening.</h2>
+      </div>
+      <ul>
+        <li>No hacked clients, x-ray or unfair exploits.</li>
+        <li>No griefing, stealing or bypassing protections.</li>
+        <li>No harassment, hate speech or chat spam.</li>
+        <li>Report bugs instead of abusing them.</li>
+      </ul>
+    </section>
+
+    <section class="section faq-section" id="faq">
+      <div class="section-title compact">
+        <p class="eyebrow">FAQ</p>
+        <h2>The useful answers.</h2>
+      </div>
+      <div class="faq-grid">
         <details>
-          <summary>Is PolarSMP cracked?</summary>
-          <p>No. Java players need a valid Minecraft account. Bedrock players join through Floodgate with their Microsoft account.</p>
+          <summary>Do I need to apply?</summary>
+          <p>No. PolarSMP is open access and the whitelist is disabled.</p>
         </details>
         <details>
-          <summary>Can I join right now?</summary>
-          <p>Yes. There is no application or whitelist. Add the correct address for your edition and connect.</p>
+          <summary>Is cracked Java supported?</summary>
+          <p>No. Java players need a valid Minecraft account. Bedrock joins through Floodgate.</p>
         </details>
         <details>
-          <summary>Do Java and Bedrock players share the same world?</summary>
-          <p>Yes. Progress, the economy, shops and the world are shared across both editions.</p>
+          <summary>Do both editions share progress?</summary>
+          <p>Yes. Java and Bedrock share the same world, economy, shops and progression.</p>
         </details>
         <details>
-          <summary>Which version should I use?</summary>
-          <p>The server runs Paper 1.21.11. ViaVersion also helps nearby Java versions connect.</p>
+          <summary>Which Java version should I use?</summary>
+          <p>The server runs Paper 1.21.11. ViaVersion may allow nearby versions as well.</p>
+        </details>
+        <details>
+          <summary>Why does Bedrock need a port?</summary>
+          <p>Bedrock servers use a separate UDP route. Enter port 15014 when adding PolarSMP.</p>
+        </details>
+        <details>
+          <summary>Can console players join?</summary>
+          <p>Yes, but some consoles need a third-party method to add external Bedrock servers.</p>
         </details>
       </div>
+    </section>
+
+    <section class="final-cta">
+      <div>
+        <p class="eyebrow">READY WHEN YOU ARE</p>
+        <h2>play.polarsmp.com</h2>
+      </div>
+      <button class="button button-primary" data-copy="play.polarsmp.com">COPY SERVER ADDRESS</button>
     </section>
   </main>
 
   <footer>
-    <a class="wordmark" href="#top">POLAR<span>SMP</span></a>
+    <a class="wordmark" href="#top">
+      <span class="wordmark-icon">P</span>
+      <span>POLAR<strong>SMP</strong></span>
+    </a>
     <p>Player-run survival for Java and Bedrock.</p>
     <p class="fine-print">Not affiliated with Mojang Studios or Microsoft.</p>
   </footer>
 
   <div class="toast" role="status" aria-live="polite">Copied</div>
-  <script src="script.js?v=2"></script>
+  <script src="script.js?v=5"></script>
 </body>
 </html>
